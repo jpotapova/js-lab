@@ -1,6 +1,6 @@
 const stringMap = require('../string-map');
 describe('string map', () => {
-  it('example test', () => {
-    expect(stringMap()).toBe('');
+  it('generates empty object for an empty string ', () => {
+    expect(stringMap('')).toEqual({});
   });
 });

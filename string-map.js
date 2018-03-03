@@ -1,5 +1,5 @@
-function stringMap(a, b) {
-  return '';
+function stringMap(s) {
+  return {};
 }
 
 module.exports = stringMap;
