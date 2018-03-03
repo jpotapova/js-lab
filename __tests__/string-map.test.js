@@ -9,4 +9,10 @@ describe('string map', () => {
   it('generates an object {"a": 1, "b": 1} for a string "ab"', () => {
     expect(stringMap('ab')).toEqual({ a: 1, b: 1 });
   });
+  it('generates an object {"a": 1, "b": 1, "c": 1} for a string "abc"', () => {
+    expect(stringMap('abc')).toEqual({ a: 1, b: 1, c: 1 });
+  });
+  it('generates an object {"a": 3, "b": 1, "c": 1} for a string "abaca"', () => {
+    expect(stringMap('abaca')).toEqual({ a: 3, b: 1, c: 1 });
+  });
 });
