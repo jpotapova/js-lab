@@ -1,18 +1,12 @@
 const arraySum = require('../array-sum');
 describe('Array sum', () => {
   it('returns 0 for an empty array', () => {
-    expect(arraySum([])).toBe(0);
+    expect(arraySum(0, [])).toBe(0);
   });
-  // it('generates "a" for a string "a"', () => {
-  //   expect(differentSymbols('a')).toEqual('a');
-  // });
-  // it('generates "ab" for a string "ab"', () => {
-  //   expect(differentSymbols('ab')).toEqual('ab');
-  // });
-  // it('generates "abc" for a string "abc"', () => {
-  //   expect(differentSymbols('abc')).toEqual('abc');
-  // });
-  // it('generates "abc" for a string "abaca"', () => {
-  //   expect(differentSymbols('abaca')).toEqual('abc');
-  // });
+  it('returns 1 for [1]', () => {
+    expect(arraySum(1, [1])).toEqual(1);
+  });
+  it('returns 6 for [1, 2, 3]', () => {
+    expect(arraySum(3, [1, 2, 3])).toEqual(6);
+  });
 });

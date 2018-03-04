@@ -1,5 +1,9 @@
 function arraySum(n, arr) {
-  return 0;
+  var sum = 0;
+  for (var i = 0; i < n; i++) {
+    sum = sum + arr[i];
+  }
+  return sum;
 }
 
 module.exports = arraySum;
