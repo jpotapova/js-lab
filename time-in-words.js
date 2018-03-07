@@ -26,6 +26,8 @@ function timeInWords(h, m) {
     result = nrToWord[h] + " o' clock";
   } else if (m === 15) {
     result = 'quarter past ' + nrToWord[h];
+  } else if (m === 45) {
+    result = 'quarter to ' + nrToWord[h + 1];
   }
   return result;
 }

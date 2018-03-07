@@ -42,4 +42,7 @@ describe('Time in words returns', () => {
   it('quarter past six for 6:15', () => {
     expect(timeInWords(6, 15)).toBe('quarter past six');
   });
+  it('quarter to seven for 6:45', () => {
+    expect(timeInWords(6, 45)).toBe('quarter to seven');
+  });
 });
