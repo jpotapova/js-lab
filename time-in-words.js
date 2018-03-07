@@ -22,8 +22,12 @@ function timeInWords(h, m) {
   };
 
   function minsInWords(m) {
-    if (m < 21) return nrToWord[m];
-    else return 'twenty ' + nrToWord[m % 10];
+    var result = '';
+    if (m < 21) result = nrToWord[m];
+    else result = 'twenty ' + nrToWord[m % 10];
+    if (m === 1 || m === 21) result = result + ' minute ';
+    else result = result + ' minutes ';
+    return result;
   }
 
   if (m === 0) {
@@ -33,9 +37,9 @@ function timeInWords(h, m) {
   } else if (m === 45) {
     result = 'quarter to ' + nrToWord[h + 1];
   } else if (m < 30) {
-    result = minsInWords(m) + ' past ' + nrToWord[h];
+    result = minsInWords(m) + 'past ' + nrToWord[h];
   } else if (m > 30) {
-    result = minsInWords(60 - m) + ' to ' + nrToWord[h + 1];
+    result = minsInWords(60 - m) + 'to ' + nrToWord[h + 1];
   }
   return result;
 }

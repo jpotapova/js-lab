@@ -45,13 +45,22 @@ describe('Time in words returns', () => {
   it('quarter to seven for 6:45', () => {
     expect(timeInWords(6, 45)).toBe('quarter to seven');
   });
-  it('twenty one past two for 2:21', () => {
-    expect(timeInWords(2, 21)).toBe('twenty one past two');
+  it('one minute to five for 4:59', () => {
+    expect(timeInWords(4, 59)).toBe('one minute to five');
   });
-  it('twenty nine to eight for 7:31', () => {
-    expect(timeInWords(7, 31)).toBe('twenty nine to eight');
+  it('two minutes to five for 4:58', () => {
+    expect(timeInWords(4, 58)).toBe('two minutes to five');
   });
-  it('one to five for 4:59', () => {
-    expect(timeInWords(4, 59)).toBe('one to five');
+  it('twenty one minute to five for 4:39', () => {
+    expect(timeInWords(4, 39)).toBe('twenty one minute to five');
+  });
+  it('one minute past five for 5:01', () => {
+    expect(timeInWords(5, 1)).toBe('one minute past five');
+  });
+  it('two minutes past five for 5:02', () => {
+    expect(timeInWords(5, 2)).toBe('two minutes past five');
+  });
+  it('twenty one minute past five for 5:21', () => {
+    expect(timeInWords(5, 21)).toBe('twenty one minute past five');
   });
 });
