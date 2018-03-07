@@ -36,6 +36,8 @@ function timeInWords(h, m) {
     result = 'quarter past ' + nrToWord[h];
   } else if (m === 45) {
     result = 'quarter to ' + nrToWord[h + 1];
+  } else if (m === 30) {
+    result = 'half past ' + nrToWord[h];
   } else if (m < 30) {
     result = minsInWords(m) + 'past ' + nrToWord[h];
   } else if (m > 30) {

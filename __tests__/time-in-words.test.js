@@ -63,4 +63,7 @@ describe('Time in words returns', () => {
   it('twenty one minute past five for 5:21', () => {
     expect(timeInWords(5, 21)).toBe('twenty one minute past five');
   });
+  it('half past three for 3:30', () => {
+    expect(timeInWords(3, 30)).toBe('half past three');
+  });
 });
