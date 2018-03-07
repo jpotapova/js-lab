@@ -48,4 +48,10 @@ describe('Time in words returns', () => {
   it('twenty one past two for 2:21', () => {
     expect(timeInWords(2, 21)).toBe('twenty one past two');
   });
+  it('twenty nine to eight for 7:31', () => {
+    expect(timeInWords(7, 31)).toBe('twenty nine to eight');
+  });
+  it('one to five for 4:59', () => {
+    expect(timeInWords(4, 59)).toBe('one to five');
+  });
 });
