@@ -16,11 +16,18 @@ var easyChange = {
     /*
      * Return the amount the cashier should ask the customer or -1 if this exceeds 9.
      */
+    var result = -1;
     var changeToGive = p - c;
     if (this.isSingleBill(changeToGive)) {
-      return 0;
+      result = 0;
     } else {
+      for (var i = 1; i < 10; i++) {
+        if (this.isSingleBill(changeToGive + i)) {
+          result = i;
+        }
+      }
     }
+    return result;
   }
 };
 

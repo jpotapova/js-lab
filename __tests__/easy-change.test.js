@@ -6,6 +6,24 @@ describe('Change to ask', () => {
   it('20 60', () => {
     expect(easyChange.howMuchToAsk(20, 60)).toBe(0);
   });
+  it('20 50', () => {
+    expect(easyChange.howMuchToAsk(20, 50)).toBe(-1);
+  });
+  it('101 200', () => {
+    expect(easyChange.howMuchToAsk(101, 200)).toBe(1);
+  });
+  it('101 500', () => {
+    expect(easyChange.howMuchToAsk(101, 500)).toBe(1);
+  });
+  it('104 200', () => {
+    expect(easyChange.howMuchToAsk(104, 200)).toBe(4);
+  });
+  it('109 200', () => {
+    expect(easyChange.howMuchToAsk(109, 200)).toBe(9);
+  });
+  it('110 200', () => {
+    expect(easyChange.howMuchToAsk(110, 200)).toBe(-1);
+  });
 });
 describe('Is single bill', () => {
   it('40', () => {
