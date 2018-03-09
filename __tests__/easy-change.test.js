@@ -1,4 +1,9 @@
 const easyChange = require('../easy-change');
+describe('Change to ask', () => {
+  it('370 420', () => {
+    expect(easyChange.howMuchToAsk(370, 420)).toBe(0);
+  });
+});
 describe('Is single bill', () => {
   it('20', () => {
     expect(easyChange.isSingleBill(20)).toBe(true);

@@ -11,6 +11,10 @@ var easyChange = {
      * Return the amount the cashier should ask the customer or -1 if this exceeds 9.
      */
     var changeToGive = p - c;
+    if (this.isSingleBill(changeToGive)) {
+      return 0;
+    } else {
+    }
   }
 };
 
