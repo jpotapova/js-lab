@@ -31,9 +31,12 @@ describe('is recycled', () => {
 
 describe('solution', () => {
   it('case1', () => {
-    expect(s.uniqueRecycledPairs(8, [2, 3, 10, 1, 13, 31, 23, 32])).toBe(2);
+    expect(s.uniqueRecycledPairs([2, 3, 10, 1, 13, 31, 23, 32])).toBe(2);
   });
   it('case2', () => {
-    expect(s.uniqueRecycledPairs(8, [2345, 3452, 10, 1, 13, 31, 23, 32])).toBe(3);
+    expect(s.uniqueRecycledPairs([2345, 3452, 10, 1, 13, 31, 23, 32])).toBe(3);
+  });
+  it('case3', () => {
+    expect(s.uniqueRecycledPairs([23, 32, 23, 32])).toBe(1);
   });
 });

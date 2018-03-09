@@ -1,12 +1,15 @@
 function solution() {
-  function uniqueRecycledPairs(n, A) {
+  function uniqueRecycledPairs(A) {
     /*
 	     * Return the number of unique recycled pairs present in the array.
 	     */
     var count = 0;
     var arr = A.sort(function compareNumbers(a, b) {
       return a - b;
+    }).filter(function(elem, pos, arr) {
+      return arr.indexOf(elem) == pos;
     });
+    var n = arr.length;
     var lengthChanges = splitByLength(arr);
     var lengthChangesCount = lengthChanges.length - 1;
     for (var l = 0; l < lengthChangesCount; l++) {
@@ -26,10 +29,14 @@ function solution() {
 
   function compareInts(iFrom, iTo, arr) {
     var count = 0;
+    var max = arr[iFrom].toString().length - 1;
     for (var i = iFrom; i < iTo; i++) {
+      var c = 0;
       for (var j = i + 1; j <= iTo; j++) {
         if (isRecycledInt(arr[i], arr[j])) {
+          c++;
           count++;
+          if (c === max) j = iTo + 1;
         }
       }
     }
@@ -61,6 +68,7 @@ function solution() {
       let s = int1s.substr(i) + int1s.substr(0, i);
       if (s === int2s) {
         isPair = true;
+        i = l;
       }
     }
     return isPair;
