@@ -6,7 +6,7 @@ var easyChange = {
     var result = false;
     var singleBills = [20, 50, 100, 200, 500, 1000];
     for (var i = 0; i < 6; i++) {
-      if (amount % singleBills[i] === 0) {
+      if (amount === singleBills[i]) {
         result = true;
       }
     }
