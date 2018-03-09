@@ -3,8 +3,14 @@ var easyChange = {
     return 0;
   },
   isSingleBill: function(amount) {
+    var result = false;
     var singleBills = [20, 50, 100, 200, 500, 1000];
-    return singleBills.indexOf(amount) > -1;
+    for (var i = 0; i < 6; i++) {
+      if (amount % singleBills[i] === 0) {
+        result = true;
+      }
+    }
+    return result;
   },
   howMuchToAsk: function(c, p) {
     /*
