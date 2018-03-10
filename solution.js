@@ -3,12 +3,11 @@ function solution() {
     /*
      * Return the number of gift boxes that can be packaged.
      */
-    var count = 0;
+    var l = c.length;
     while (c.indexOf(g) > -1) {
-      c = c.replace(g, '');
-      count++;
+      c = c.split(g).join('');
     }
-    return count;
+    return (l - c.length) / g.length;
   }
 
   return {
