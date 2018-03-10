@@ -1,17 +1,62 @@
 function solution() {
-  function giftBoxes(g, c) {
+  function canColor(n, m, A, B) {
     /*
-     * Return the number of gift boxes that can be packaged.
+     * Return either "YES" or "NO" denoting whether it is possible or not.
      */
-    var l = c.length;
-    while (c.indexOf(g) > -1) {
-      c = c.split(g).join('');
+    var result = 'YES';
+    var sumA = 0;
+    var sumB = 0;
+    for (var i = 0; i < n; i++) {
+      sumA += A[i];
     }
-    return (l - c.length) / g.length;
+    for (var j = 0; j < m; j++) {
+      sumB += B[j];
+    }
+    if (sumA !== sumB) {
+      result = 'NO';
+    }
+
+    //---
+    A = A.sort(function(a, b) {
+      return a - b;
+    });
+
+    var newB = [],
+      aCopy = A.slice();
+    var rowSum;
+    // construct rows
+    for (var r = 0; r < m; r++) {
+      // row by row
+      rowSum = 0;
+      for (var i = 0; i < n; i++) {
+        // col by col
+        if (aCopy[i] > 0) {
+          aCopy[i]--;
+          rowSum++;
+        }
+      }
+      newB.push(rowSum);
+    }
+
+    B = B.sort(function(a, b) {
+      return a - b;
+    });
+    newB = newB.sort(function(a, b) {
+      return a - b;
+    });
+    for (var p = 0; p < m; p++) {
+      if (B[p] !== newB[p]) {
+        result = 'NO';
+      }
+    }
+
+    // compare two sorted arrays
+
+    return result;
   }
 
   return {
-    giftBoxes: giftBoxes
+    canColor: canColor
   };
 }
 
