@@ -1,3 +1,3 @@
-To run tests:
+1. install the dependencies `npm install`
 
-`npm test`
+2. run tests `npm test`
